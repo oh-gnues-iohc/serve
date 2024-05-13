@@ -108,7 +108,7 @@ class Common:
                 sys.exit(1)
             else:
                 os.system(
-                    f"{sys.executable} -m pip install -U -r requirements/torch_{cuda_version}_{platform.system().lower()}.txt"
+                    f"{sys.executable} -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118"
                 )
         elif args.neuronx:
             torch_neuronx_requirements_file = os.path.join(
